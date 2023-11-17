@@ -1,0 +1,52 @@
+/* 
+┌─┐┬┌┬┐┌─┐┬  ┌─┐
+└─┐││││├─┘│  ├┤ 
+└─┘┴┴ ┴┴  ┴─┘└─┘
+┌─┐┌─┐─┐ ┬      
+├┤ │ │┌┴┬┘      
+└  └─┘┴ └─
+
+by Miguel Avila
+
+edited by Meelix
+
+*/
+
+:root {
+    --sfwindow: #121212;
+    --sfsecondary: #19191a;
+
+    --accent: #ffff89 !important;
+    --accent-hover: #ffb869 !important;
+    --accent-active: #a36f34 !important;
+}
+
+:root:-moz-window-inactive {
+    --accent: #447bff!important;
+    --accent-hover: #7da6ff !important;
+    --accent-active: #0db9d7 !important;
+}
+
+
+/* animating the color transition won't work until firefox fully implements the houdini spec
+(firefox v121 can't animate custom houdini properties) */
+/* @property --accent {
+    syntax: '<color>';
+    initial-value: #ffff89;
+    inherits: false;
+}
+@property --accent-hover {
+    syntax: '<color>';
+    initial-value: #ffb869;
+    inherits: false;
+}
+@property --accent-active {
+    syntax: '<color>';
+    initial-value: #a36f34;
+    inherits: false;
+}
+:root {
+    transition: --accent 3s cubic-bezier(0.05, 0.9, 0.1, 1.05),
+                --accent-hover 3s cubic-bezier(0.05, 0.9, 0.1, 1.05),
+                --accent-active 3s cubic-bezier(0.05, 0.9, 0.1, 1.05) !important;
+} */

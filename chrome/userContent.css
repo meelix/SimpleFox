@@ -8,7 +8,23 @@
 
 by Miguel Avila
 
+edited by Meelix
+
 */
+
+@import url(colors.css);
+
+:root {
+  --in-content-page-background: var(--sfwindow) !important;
+  --in-content-table-background: var(--sfwindow) !important;
+  --in-content-page-color: #fff !important;
+  --in-content-primary-button-text-color: var(--sfwindow) !important;
+  --in-content-primary-button-background: var(--accent) !important;
+  --in-content-primary-button-background-hover: var(--accent-hover) !important;
+  --in-content-primary-button-background-active: var(--accent-active) !important;
+  --in-content-container-max-width: 47em !important;
+  --in-content-table-header-color: var(--sfwindow) !important;
+}
 
 :root {
   scrollbar-width: none !important;
@@ -19,3 +35,43 @@ by Miguel Avila
     scrollbar-width: none !important;
   }
 }
+
+@-moz-document url(about:newtab), url(about:home) {
+  @font-face {
+    font-family: Metropolis; /*font used in firefox logo*/
+    src: url('./assets/Metropolis-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  body {
+    --newtab-background-color: var(--sfwindow) !important;
+    --newtab-background-color-secondary: var(--sfsecondary) !important;
+    --newtab-primary-action-background: var(--blue) !important;
+  }
+  .outer-wrapper {
+    padding: 0 0 4vh !important;
+    display: grid !important;
+    place-items: center !important;
+  }
+  .logo {
+    background: url("./assets/fox.png") no-repeat left center/100% auto !important;
+    width: 160px !important;
+    height: 160px !important;
+    margin-left: -20px;
+  }
+  .wordmark {
+    background: none !important;
+    width: auto !important;
+    display: inline-flex;
+    align-items: center;
+    height: auto !important;
+  }
+  .wordmark:before {
+    font-family: "Metropolis";
+    content: "Customfox";
+    font-size: 3.25rem;
+    font-weight: 700;
+  }
+}
+

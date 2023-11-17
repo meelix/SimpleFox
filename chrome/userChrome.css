@@ -8,7 +8,11 @@
 
 by Miguel Avila
 
+edited by Meelix
+
 */
+
+@import url(colors.css);
 
 /*
  
@@ -17,11 +21,6 @@ by Miguel Avila
 └─┘└─┘┘└┘└  ┴└─┘└─┘┴└─┴ ┴ ┴ ┴└─┘┘└┘
 
 */
-
-:root {
-  --sfwindow: #19171a;
-  --sfsecondary: #201e21;
-}
 
 /* Urlbar View */
 
@@ -52,9 +51,16 @@ by Miguel Avila
   > #tabbrowser-arrowscrollbox
   > .tabbrowser-tab
   > .tab-stack
-  > .tab-background[selected='true'] {
+  > .tab-background[selected='true'],
+#tabbrowser-tabs:not([movingtab])
+  > #tabbrowser-arrowscrollbox
+  > .tabbrowser-tab
+  > .tab-stack
+  > .tab-background:is([selected],[multiselected]):-moz-lwtheme {
   background-image: none !important;
   background-color: var(--toolbar-bgcolor) !important;
+  border-bottom: 2px solid var(--accent) !important;
+  transition: border-color 1s cubic-bezier(0.05, 0.9, 0.1, 1.05);
 }
 
 /* Inactive tabs color */
@@ -92,9 +98,9 @@ by Miguel Avila
   display: none;
 }
 
-.tabbrowser-tab:not([pinned]) .tab-icon-image {
+/* .tabbrowser-tab:not([pinned]) .tab-icon-image {
   display: none !important;
-}
+} */
 
 #nav-bar:not([tabs-hidden='true']) {
   box-shadow: none;
@@ -153,9 +159,9 @@ by Miguel Avila
 .bookmark-item .toolbarbutton-icon {
   display: none;
 }
-toolbarbutton.bookmark-item:not(.subviewbutton) {
+/* toolbarbutton.bookmark-item:not(.subviewbutton) {
   min-width: 1.6em;
-}
+} */
 
 /* Toolbar  */
 #tracking-protection-icon-container,
@@ -168,6 +174,14 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
 #PanelUI-button,
 #forward-button,
 .tab-secondary-label {
+  display: none !important;
+}
+#alltabs-button,
+.titlebar-buttonbox,
+.titlebar-buttonbox-container,
+.titlebar-min,
+.titlebar-max,
+.titlebar-spacer {
   display: none !important;
 }
 
